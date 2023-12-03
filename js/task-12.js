@@ -6,8 +6,12 @@
 
 const obj = { a: 1, b: 2, c: 3 };
 function updateObject(newObj, key) {
-    const resObj = newObj
-    delete resObj[key];
+    const resObj = { ...newObj }
+    const status = delete resObj[key];
+if (status) {
+   return newObj[key]
+}
+
     return resObj
 }
 
